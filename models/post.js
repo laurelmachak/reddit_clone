@@ -2,19 +2,20 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
-    createdAt: { type: Date},
-    updatedAt: {type: Date},
-    title: {type: String, required: true},
-    url: { type: String, required: true },
-    summary: {type: String, required: true}
+    createdAt: Date,
+    updatedAt: Date,
+    title: String,
+    subReddit: String,
+    summary: String
 });
 
 PostSchema.pre('save', (next) => {
     const now = new Date()
     this.updatedAt = now
     if (!this.createdAt) {
-        next()
+        this.createdAt = now
     }
+    next()
 })
 
-module.exports = mongoose.model('Post', PostSchema); 
+module.exports = mongoose.model('Post', PostSchema);

@@ -1,0 +1,8 @@
+<div class="single_post">
+<h2>{{post.title}}</h2>
+<p>{{post.summary}}</p>
+</div>
+<form action="/posts/{{post._id}}/comments" method="POST">
+    <textarea name="content" placeholder="Comment"></textarea>
+    <button type="submit">Save</button>
+</form>

@@ -1,24 +1,24 @@
 
-    <form class="post-form" action="/posts/new">
+    <form class="post-form" method="POST" action="/posts">
       <legend>New Post</legend>
-        
+
      <div class="form-group">
         <label for="post-title">Title</label>
-        <input type="text" name="title" class="form-control" id="post-title" placeholder="Title">
+        <input type="text" name="title" class="form-control" id="post-title" placeholder="Title" />
       </div>
-        
+
       <div class="form-group">
-        <label for="post-url">Url</label>
-        <input type="url" name="url" class="form-control" id="post-url" placeholder="https://www.google.com">
+        <label for="post-subReddit">Subreddit</label>
+        <input type="text" name="subReddit" class="form-control" id="post-subReddit" placeholder="Subreddit" />
      </div>
-        
+
       <div class="form-group">
         <label for="post-summary">Summary</label>
         <textarea name="summary" class="form-control" id="post-summary" placeholder="Summary"></textarea>
     </div>
 
- 
+
           <button type="submit" class="btn-submit">Create</button>
-      
+
 
     </form>
